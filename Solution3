@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+public class Solution3 {
+    public static void main(String[] args) {
+        String[] firstPart = new String[2];
+        String[] secondPart = new String[2];
+
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        scan.close();
+
+        if((n % 10) >= 5)
+            firstPart[0] = "-0";
+        else
+            firstPart[0] = "0-";
+
+        if((n % 10) == 0 || (n % 10) == 5)
+            secondPart[0] = "-0000";
+        else
+            if((n % 10) == 1 || (n % 10) == 6)
+                secondPart[0] = "0-000";
+            else
+                if((n % 10) == 2 || (n % 10) == 7)
+                    secondPart[0] = "00-00";
+                else
+                    if((n % 10) == 3 || (n % 10) == 8)
+                        secondPart[0] = "000-0";
+                    else
+                        if((n % 10) == 4 || (n % 10) == 9)
+                            secondPart[0] = "0000-";
+
+        System.out.println(firstPart[0] + "|" + secondPart[0]);
+
+        if((n / 10) >= 5)
+            firstPart[1] = "-0";
+        else
+            firstPart[1] = "0-";
+
+        if((n / 10) == 0 || (n / 10) == 5)
+            secondPart[1] = "-0000";
+        else
+            if((n / 10) == 1 || (n / 10) == 6)
+                secondPart[1] = "0-000";
+            else
+                if((n / 10) == 2 || (n / 10) == 7)
+                    secondPart[1] = "00-00";
+                else
+                    if((n / 10) == 3 || (n / 10) == 8)
+                        secondPart[1] = "000-0";
+                    else
+                        if((n / 10) == 4 || (n / 10) == 9)
+                            secondPart[1] = "0000-";
+
+        System.out.println(firstPart[1] + "|" + secondPart[1]);
+    }
+}
